@@ -194,6 +194,7 @@ rects.forEach((rect) => {
     if (rect["__data__"]["important"]) {
         console.log(rect);
         rect.classList.add("important");
+
         let nodeName = rect["__data__"]["name"].toUpperCase();
         textLabels.forEach((text) => {
             if (text["textContent"] == nodeName) {
@@ -269,7 +270,23 @@ rects.forEach((rect) => {
                 }
             });
         });
+    
+    
+    
+    
+    
+    
+    
     });
 
     //rect.classList.add("twinkle");
+});
+
+textLabels.forEach((label) => {
+    label.addEventListener("mouseover", e => {
+        label.classList.add("textBoldened");
+    });
+    label.addEventListener("mouseleave", e => {
+        label.classList.remove("textBoldened");
+    })
 });
