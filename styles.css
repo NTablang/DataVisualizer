@@ -8,7 +8,7 @@ body {
     width: 100vw;
 }
 .graph {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Space Mono', monospace ;
     height: 100%;
     width: 100%;
 }
@@ -67,7 +67,8 @@ body {
     visibility: visible;
 }
 .textBoldened {
-    font-weight: 700;
+    font-weight: bolder;
+    font-size: 13px !important;
 }
 
 .twinkle {
@@ -177,7 +178,6 @@ h1 {
     border: 1px solid white;
     font-weight: normal;
     position: relative;
-    bottom: 55.2vh;
    
     left: 17vw;
     text-align: center;
@@ -212,7 +212,7 @@ h2 {
     padding: 10px;
     text-overflow: ellipsis;
     overflow:scroll;
-    height: 67%;
+    height: 50%;
 }
 .non-important-popout {
     border: 1px solid #FF5F1F;
@@ -227,7 +227,6 @@ h2 {
     border: 1px solid #FF5F1F;
     font-weight: normal;
     position: relative;
-    bottom: 55.2vh;
    
     left: 17vw;
     text-align: center;
@@ -241,7 +240,6 @@ h2 {
     color: rgba(255, 255, 255, 0.8);
     bottom: 2vh;
     right: 2vw;
-    border: white 1px solid;
 }
 /*
 .hide {
@@ -267,3 +265,32 @@ h2 {
     from { opacity: 1; }
     to   { opacity: 0; }
 }
+.suggestedLinks {
+    margin-top: 10px;
+}
+a {
+    color: white;
+
+}
+.non-important-a {
+    color: #FF5F1F !important;
+}
+a:hover {
+    color: #FF5F1F;
+}
+li {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+ul {
+    padding-left: 10px;
+    
+}
+/*
+.textShown:hover {
+    font-weight: 700;
+    font-family: "Space-Mono";
+}
+*/
+

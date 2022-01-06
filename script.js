@@ -6,7 +6,9 @@ let graphs = {
 }
 
 let idCount = 0;
-
+let linkCount = 0;
+let suggestedTitles;
+let suggestedLinks;
 /*
 // customization variables
 let squareSideLength = 5;
@@ -401,8 +403,9 @@ const addStyles = () => {
             })
 
             /* TITLE BAR */ 
+            let nodeName = rect["__data__"].name;
             let title = document.createElement("h2");
-            title.innerHTML = rect["__data__"].name.toUpperCase();
+            title.innerHTML = nodeName.toUpperCase();
             title.classList.add("titleBar");
 
             /* TEXT DIV */
@@ -424,6 +427,46 @@ const addStyles = () => {
             if (!rect["__data__"].important) {
                 textdescriptionDiv.style.color = "#FF5F1F";
             }
+            /* LINKS ADDON TO TEXTDESCRIPTIONDIV */
+            let suggestedDiv = document.createElement("div");
+            suggestedDiv.classList.add("suggestedLinks");
+            suggestedDiv.textContent = "📰 Suggested Feeds";
+            if (!rect["__data__"].important) {
+                suggestedDiv.classList.add("non-important-a");
+            }
+            
+            
+            /*
+            console.log(d3.json("https://api.nytimes.com/svc/search/v2/articlesearch.json?q=Student&api-key=xAskm0aJnTaEfA22HWvzeIEfg6WyLTaQ", gotData))
+            */
+            
+            findSuggested(nodeName);
+            setTimeout(() => {
+                console.log("chk");
+                //console.log(suggested[0]);
+
+                let lists = document.createElement("ul");
+                
+
+                for (let i = 0; i < 3; i++) {
+                    let item = document.createElement("li");
+                    let link = document.createElement("a")
+                    link.innerHTML = suggestedTitles[i];
+                    link.href = suggestedLinks[i];
+                    link.id = `link${linkCount}`
+                    item.appendChild(link);
+                    lists.appendChild(item);
+                    idCount++;
+
+                    
+                }
+                
+                textdescriptionDiv.appendChild(lists);
+
+            }, 1000);
+            
+
+            textdescriptionDiv.appendChild(suggestedDiv);
             textDiv.append(textdescriptionDiv);
 
             /* CLOSE BUTTON */
@@ -591,7 +634,7 @@ const draggableDivs = () => {
                 var divs = document.querySelectorAll(".popout-app1");
                 
                 e.target.style.zIndex = divs.length;          // put this div  on top
-                //var i = 1; for (div of divs) if (div.id != the_moving_div) div.style.zIndex = i++;   // put all other divs behind the selected one
+                var j = 1; for (div of divs) if (div.id != the_moving_div) div.style.zIndex = j++;   // put all other divs behind the selected one
             }
             
             function onMouseMove(e) {
@@ -611,52 +654,44 @@ const draggableDivs = () => {
                 the_moving_div = "";
             }
 }
-/*
-const draggable1 = () => {
-    divs = document.querySelectorAll(".popout-app1");
-    for (div of divs) div.onmousedown = onMouseDown;
-    
-    document.onmousemove = onMouseMove;
-    document.onmouseup   = onMouseUp;
-    
-   // canvas.width = window.innerWidth - 20;
-   // canvas.height = window.innerHeight - 20;
-    
-    let the_moving_div = ''; 
-    let the_last_mouse_position = { x:0, y:0 };
-    
-    
-    function onMouseDown(e) {
-        e.preventDefault();
-        the_moving_div            = e.target.id;      // remember which div has been selected 
-        the_last_mouse_position.x = e.clientX;        // remember where the mouse was when it was clicked
-        the_last_mouse_position.y = e.clientY;
-        e.target.style.border = "2px solid blue";     // highlight the border of the div
-    
-        var divs = document.querySelectorAll(".popout-app1");
-        
-        e.target.style.zIndex = divs.length;          // put this div  on top
-        var i = 1; for (div of divs) if (div.id != the_moving_div) div.style.zIndex = i++;   // put all other divs behind the selected one
-    }
-    
-    function onMouseMove(e) {
-        e.preventDefault();
-        if (the_moving_div == "") return;
-        var d = document.getElementById(the_moving_div);
-        d.style.left = d.offsetLeft + e.clientX - the_last_mouse_position.x + "px";     // move the div by however much the mouse moved
-        d.style.top  = d.offsetTop  + e.clientY - the_last_mouse_position.y + "px";
-        the_last_mouse_position.x = e.clientX;                                          // remember where the mouse is now
-        the_last_mouse_position.y = e.clientY;
-        //drawConnectors();
-    }
-    
-    function onMouseUp(e) {
-        e.preventDefault();
-        if (the_moving_div == "") return;
-        document.getElementById(the_moving_div).style.border = "none";             // hide the border again
-        the_moving_div = "";
-    }
-    
+
+const gotData = (data) => {
+    lastFetch = data;
+    return;
 }
 
-*/
+async function findSuggested(name) {
+    console.log("finding articles for")
+    console.log(name);
+    let currentNodeName = name;
+    let url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${currentNodeName}&api-key=xAskm0aJnTaEfA22HWvzeIEfg6WyLTaQ`;
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data.response.docs[0].headline);
+    console.log(data.response.docs[1].headline);
+    console.log(data.response.docs[2].headline);
+    suggestedLinks = [
+        data.response.docs[0]["web_url"],
+        data.response.docs[0]["web_url"],
+        data.response.docs[0]["web_url"]
+    ]
+    suggestedTitles =  [
+        data.response.docs[0].headline.main,
+        data.response.docs[1].headline.main,
+        data.response.docs[2].headline.main
+    ]
+    return;
+}
+function hoverdiv(e,divid){
+
+    var left  = e.clientX  + "px";
+    var top  = e.clientY  + "px";
+
+    var div = document.getElementById(divid);
+
+    div.style.left = left;
+    div.style.top = top;
+
+    $("#"+divid).toggle();
+    return false;
+}

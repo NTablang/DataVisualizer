@@ -1,42 +1,42 @@
 Topic,Description,Notes,Image Path
-Student Debt,"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of ""de Finibus Bonorum et Malorum"" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, ""Lorem ipsum dolor sit amet.."", comes from a line in section 1.10.32.",Main,images/debt1.jpg
-Govermental Efforts,,Subtopic,images/debt4.jpg
-Ranking,,Subtopic,
-Capitalism,,Subtopic,
-Typical Payment,,Subtopic,
-Trans Generational Problem,,Subtopic,
-Entertainment,"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of ""de Finibus Bonorum et Malorum"" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, ""Lorem ipsum dolor sit amet.."", comes from a line in section 1.10.32.",Point,images/debt2.jpg
-Paid Off Show ,,Point,
-March Madness,,Point,
-American Dream,,Point,
-(Mis)Invested Potential Wealth,,Point,
-Best Colleges Magazine,,Point,
-Student Debt as Top Debt,,Point,
-Supernation Power,,Point,
-War On Poverty,,Point,
-Higher Education Act of 1965,,Point,
-Military Strength,,Point,
-Sputnik,,Point,
-National Defense Education Act of 1958,,Point,
-GI Bill,,Point,
-Income Based Repayment,,Point,
-Public Service Loan Forgiveness,,Point,
-Forebearance,,Point,
-Cutting the Banks,,Point,
-State AGs,,Point,
-Raegan ERA,,Point,
-CFPB,,Point,
-Largest Bank: Dep't of Education,,Point,
+Student Debt,"While it would be ideal to be able to attend college for free or without incurring debt, the truth is that student loans are frequently required for people seeking a higher education, especially given the rate at which college tuition continues to rise. Over the last decade, the student debt crisis has grown by 144%, putting 45 million Americans on the hook for $1.7 trillion in loans. Increasing tuition costs and uncontrolled borrowing aren't helping the situation. ""The student loan system is saddling millions of students and families with debt that harms their long-term financial security and well-being,"" Kevin Miller, BPC associate director of higher education, said in a statement. ""And when borrowers cannot repay their loans, the federal government and taxpayers foot the bill. We need reforms to protect students as well as taxpayers from the negative consequences of excessive student debt.” Loan forgiveness and limits on the amount of federal student debt that borrowers can take on have been the subject of political discussions. However, unless new legislation is passed, debtors are likely to face an ever-increasing debt load in the future.",Main,images/debt.jpg
+Govermental Efforts,"Higher education in the United States has always been regarded as a beneficial investment for many individuals and the general public, despite the fact that disparities in educational investment returns across schools were sometimes exaggerated. Here, students and their families fund much of college through loans, though public institutions are funded in part through state and local taxes, and both private and public institutions through Pell grants, gifts from donors and alumni, and investment earnings, especially at older schools.",Subtopic,images/congress.png
+Ranking,The conception of student loans that eventually blossomed to the monstrosity that we see today is because of America’s desire to always be a global superpower. Ranking plays a huge role on American politics and agenda and this industry is not immune. ,Subtopic,images/flags.png
+Capitalism,"College loans are approaching $2 trillion as the semesters go on, which is more than all homeowners owe on their credit cards combined. Fully two-thirds of our undergraduates are in debt, many of whom come from middle-class families that previously paid for much of college out of savings. Try this one if you want to make a name for yourself as an economic clairvoyant. Defaults on student indebtedness, beginning with for-profit colleges and progressing to the Ivy League, will be the next subprime disaster. There is, nevertheless, a distinction. Banks take and resell homes when borrowers default on their mortgages. The banks are unconcerned whether a degree cannot be sold. They drafted the student loan legislation, which states that they are not ""dischargable."" The payments will continue to be payable even if you file for bankruptcy. ", which is more than all homeowners owe on their credit cards combined. Fully two-thirds of our undergraduates are in debt,images/capitalism.jpg
+Typical Payment,"There are several ways that a student can pay for their student loans. Listed here are the typical payments of doing so but is not limited. Some pursue to enroll in the US military, some engage in gap years to work, while some will undergo unforeseen circumstances with possible financial instabilities.",,images/payment.png
+Trans Generational Problem,"The student loan crisis is the a problem that transcends beyond generation. Through egregiously outdated legislation in minimum wage, tax regulation, and lack of oversight on such bureaucracies, the burden to pay outstanding student loans relies more primarily on the borrowers than the government. Cultural values, myths, and disappointing fallacies might also be the culprit too.",,images/americandream.png
+Entertainment,"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of ""de Finibus Bonorum et Malorum"" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, ""Lorem ipsum dolor sit amet.."", comes from a line in section 1.10.32.",Point,images/entertainment.png
+Paid Off Show ,,Point,images/paidoff.png
+March Madness,,Point,images/march.png
+American Dream,,Point,images/americandream.png
+(Mis)Invested Potential Wealth,,Point,images/misinvestment.png
+Best Colleges Magazine,,Point,images/ranking.jpg
+Student Debt as Top Debt,,Point,images/studentdebt.png
+Supernation Power,,Point,images/imperialism.png
+War On Poverty,,Point,images/waronpoverty.png
+Higher Education Act of 1965,,Point,images/highereducation.png
+Military Strength,,Point,images/military.png
+Sputnik,,Point,images/sputnik.png
+National Defense Education Act of 1958,,Point,images/nationaldefense.png
+GI Bill,,Point,images/gibill.png
+Income Based Repayment,,Point,images/income.png
+Public Service Loan Forgiveness,,Point,images/public.png
+Forebearance,,Point,images/fore.png
+Cutting the Banks,,Point, images/banks.png
+State AGs,,Point, images/sstate.png
+Raegan ERA,,Point, images/raegan.png
+CFPB,,Point, images/cfpb.png
+Largest Bank: Dep't of Education,,Point, images/doe.png
 Loan Servicers,,Point,
-Navient,,Point,
-John Remondi,,Point,
-Betsy DeVos,,Point,
-Cuts in Higher Education Funding,,Point,
-Recessions,,Point,
-Online Education,,Point,
-Gov't + Banks Partnership,,Point,
-Aggressive Debt Collection,,Point,
-For-Profit Universities,,Point,
-Dep't of Education,,Point,
-(Mis/Dis)Informed Financial Advice,,Point,
+Navient,,Point, images/navient.png
+John Remondi,,Point, images/john.png
+Betsy DeVos,,Point, images/betsy.png
+Cuts in Higher Education Funding,,Point,images/cuts.png
+Recessions,,Point, images/house.png
+Online Education,,Point, images/online.png
+Gov't + Banks Partnership,,Point,images/gov.png
+Aggressive Debt Collection,,Point, images/collector.png
+For-Profit Universities,,Point, images/profit.png
+Dep't of Education,,Point, images/doe.png
+(Mis/Dis)Informed Financial Advice,,Point,  images/fin.png
 Incompetence,,Point,
