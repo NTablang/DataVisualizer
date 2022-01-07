@@ -37,7 +37,7 @@ I simply chose the top 3 most relevant articles given by the API in the json obj
   
     
 ### About the d3.js framework ###
-This website utilized the use of the data visualization framework, d3.js. This is my first time using d3.js and although I have not used its other features (line graphs, scatter plots, and etc), I used the force-directed node graph layout. The d3.js version that is used is version 3. This framework allowed me to build a force system (with charge, link strength, and others) as well as its nodes and edges that responds to a drag mouse event.<br>
+This website utilized the use of the third version of the data visualization framework, d3.js. This is my first time using d3.js and although I have not used its other features (line graphs, scatter plots, and etc), I used the force-directed node graph layout. This framework allowed me to build a force system (with charge, link strength, and others) as well as its nodes and edges that respond to a drag mouse event.<br>
   
 
 ## 🔥 Acknowledgements
