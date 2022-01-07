@@ -20,7 +20,7 @@ White nodes indicate a key point that is essential to such groups and connection
 whereas orange nodes provide a more specific point, white nodes provides the more overarching themes.  
 <br>
 <br>
-
+<br>
 <img align="left" src="gif2.gif" alt="gif1 of the DataVisualizer" height="500px">
    
 ### Heading 3 ###
