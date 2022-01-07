@@ -24,7 +24,7 @@ whereas orange nodes provide a more specific point, white nodes provides the mor
 <img align="left" src="gif2.gif" alt="gif1 of the DataVisualizer" height="500px">
    
 ### Informational Popouts ###
-Click on a node to find what lies underneath. The popout explains how and why a given point relates to the overarching theme and its connections. With the popout, one can see the image, the text description, and it is also fully draggable. <br> <br><br><br>
+Click on a node to find what lies underneath. The popout explains how and why a given point relates to the overarching theme and its connections. With the popout, one can see the image, the text description, and it is also fully draggable. <br> <br><br>
     
 ### Suggested Feed: Articles ###
 Articles listed are fetched through the New York Times Article Search API. Note that the articles suggested are simply queried by fetching the API with the topic name as the query parameters. As such, it may or may not be possible that the feeds suggested may be relevant to the actual topic.
