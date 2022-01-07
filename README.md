@@ -9,7 +9,6 @@ This shows the relationships between the central topics emerging since the conce
 Although this personal-guided research shows a general bigger picture, it is not intended to be used as an official material! It is simply a show of design,
 data, and discussion bundled up together.
 
-<img align="right" src="gif1.gif" alt="gif1 of the DataVisualizer">
 To start:
 
 
