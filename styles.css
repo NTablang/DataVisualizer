@@ -238,6 +238,14 @@ a {
 .link-box:hover {
     background-color: white;
 }
+.closer {
+    position: absolute;
+    font-size: 12px;
+    font-family: "Space Mono";
+    color: rgba(255, 255, 255, 0.8);
+    bottom: 2vh;
+    right: 2vw;
+}
 
 /* ANIMATIONS */
 .show {

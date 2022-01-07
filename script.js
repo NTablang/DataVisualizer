@@ -445,6 +445,7 @@ const addStyles = () => {
             // PREREQS: idCount variable, ".default-popout" class for the popouts
             let closers = document.getElementById("closer");
             if ((closers == undefined || closers == null)) {
+                console.log("here");
                 // RESPONSIBLE FOR MAKING THE DIV APPEAR
                 let closer = document.createElement("div");
                 closer.textContent = "x destroy all";
