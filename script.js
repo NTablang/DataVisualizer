@@ -87,9 +87,9 @@ const drawGraph = () => {
 
     // for motion stimulation
     force.on("tick", function(){
-        edges.attr("x1", function(d){ return d.source.x - 1; })
+        edges.attr("x1", function(d){ return d.source.x - 10; })
             .attr("y1", function(d){ return d.source.y + 5; })
-            .attr("x2", function(d){ return d.target.x - 1; })
+            .attr("x2", function(d){ return d.target.x - 10; })
             .attr("y2", function(d){ return d.target.y + 5; });
         nodes.attr("x", function(d) { return d.x; })
             .attr("y", function(d) { return d.y; });
@@ -102,10 +102,10 @@ const drawGraph = () => {
         force.start();
 
         force.on("tick", function() {
-        edges.attr("x1", function(d){ return d.source.x + offset - 1;})
-            .attr("y1", function(d){ return d.source.y + offset - 1; })
-            .attr("x2", function(d){ return d.target.x + offset - 1; })
-            .attr("y2", function(d){ return d.target.y + offset - 1; });
+        edges.attr("x1", function(d){ return d.source.x + offset - 5;})
+            .attr("y1", function(d){ return d.source.y + offset - 5; })
+            .attr("x2", function(d){ return d.target.x + offset - 5; })
+            .attr("y2", function(d){ return d.target.y + offset - 5; });
         nodes.attr("x", function(d) { return d.x; })
             .attr("y", function(d) { return d.y; });
         label.attr("x", function(d){ return d.x + 20; })
