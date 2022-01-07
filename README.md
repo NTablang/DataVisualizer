@@ -25,4 +25,7 @@ whereas orange nodes provide a more specific point, white nodes provides the mor
    
 ### Informational Popouts ###
 Click on a node to find what lies underneath. The popout explains how and why a given point relates to the overarching theme and its connections. With the popout, one can see the image, the text description, and it is also fully draggable.
+  
+### Suggested Feed: Articles ###
+Articles listed are fetched through the New York Times API.
 
