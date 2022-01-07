@@ -584,6 +584,18 @@ async function findSuggested(name) {
     ]
     return;
 }
+const showWarning = () => {
+    let startingDiv = document.querySelector(".warning");
+    startingDiv.classList.add("show");
+    setTimeout(() => {
+        startingDiv.classList.remove("show");
+        startingDiv.classList.add("hide");
+        startingDiv.addEventListener("animationend", e => {
+            document.body.removeChild(startingDiv);
+        });
+    }, 3500)
+}
 
 d3.csv("nodesDescs.csv", parseNodesCSVToGraphNodes);
 d3.csv("edges.csv", parseEdgesCSVToGraphEdges);
+showWarning();

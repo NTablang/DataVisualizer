@@ -108,6 +108,35 @@ ul {
     stroke-width: 1px;
     opacity: 0.8;
 }
+.warning {
+    font-family: "Space Mono";
+    color: rgba(255, 255, 255, 0.5);
+    border: rgba(255, 255, 255, 0.5) solid 1px;
+    position: absolute;
+    font-weight: bold;
+    font-style: italic;
+    padding: 25px;
+    top: 40vh;
+    left: 35vw;
+
+}
+.warning:hover {
+    animation: show-warning 2s ease-in-out
+}
+@keyframes show-warning {
+    25% {
+        color: rgba(255, 255, 255, 1);
+        border: rgba(255, 255, 255, 1) solid 1px;
+    }
+    50% {
+        color: rgba(255, 255, 255, 1);
+        border: rgba(255, 255, 255, 1) solid 1px;
+    }
+    75% {
+        color: rgba(255, 255, 255, 1);
+        border: rgba(255, 255, 255, 1) solid 1px;
+    }
+}
 
 /* FOR POPOUTS */
 .default-popout {
