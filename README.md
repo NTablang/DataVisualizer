@@ -38,4 +38,4 @@ Articles listed are fetched through the New York Times Article Search API. Note 
 
 ## Authors
 
-- [@NathanTablang](https://www.linkedin.com/in/nathan-tablang-297b861b1/)
+[@Nathan Tablang](https://www.linkedin.com/in/nathan-tablang-297b861b1/)
