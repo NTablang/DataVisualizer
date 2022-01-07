@@ -24,5 +24,5 @@ whereas orange nodes provide a more specific point, white nodes provides the mor
 <img align="left" src="gif2.gif" alt="gif1 of the DataVisualizer" height="500px">
    
 ### Informational Popouts ###
-Check check check check fhasiduhf asdh;fhas;dufha;ousdhfo ;sahdi 
+Click on a node to find what lies underneath. The popout explains how and why a given point relates to the overarching theme and its connections. With the popout, one can see the image, the text description, and it is also fully draggable.
 
