@@ -1,20 +1,46 @@
-:root {
-    
-} 
+/* UNIVERSAL ELEMENTS */
 body {
     background-color: #1f1919;
-
     height: 100vh;
     width: 100vw;
 }
+/* THIS IS THE X BUTTON */
+h1 {
+    background-color: transparent;
+    color: white;
+    font-size: 15px;
+    border: 1px solid white;
+    font-weight: normal;
+    position: relative;
+    bottom: 33px;
+    left: 17vw !important;
+    text-align: center;
+    width: 20px;    
+}
+a {
+    color: white;
+
+}
+a:hover {
+    color: #FF5F1F;
+}
+li {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+ul {
+    padding-left: 10px;
+    
+}
+
+
+/* GRAPH AND ITS COMPONENTS */
 .graph {
     font-family: 'Space Mono', monospace ;
     height: 100%;
     width: 100%;
 }
-
-
-/* for nodes */
 .node {
     fill: #FF5F1F;
     stroke: #FF5F1F;
@@ -23,7 +49,6 @@ body {
     font-size: 100px;
     
 }
-
 .link {
     stroke: #FF5F1F;
     stroke-width: 1px;
@@ -41,7 +66,6 @@ body {
 .shrink {
     transform: scale(1px, 1px);
 }
-
 .important {
     fill: white !important;
     stroke: white;
@@ -70,282 +94,22 @@ body {
     font-weight: bolder;
     font-size: 13px !important;
 }
-
-.twinkle {
-    animation: blinker 2s linear infinite;
-  }
-  
-  @keyframes blinker {
-    50% {
-      opacity: 50%;
-    }
-    100% {
-        opacity: 100%;
-    }
-  }
-  .main {
-      fill: #f74700 !important;
-    stroke: #f74700;
+.main {
+      fill: white !important;
+    stroke: white;
     stroke-width: 5px;
-  }
-  .main-text {
-    fill: #f74700 !important;
-  }
-  .main-link {
-    stroke: #f74700;
+}
+.main-text {
+    fill: white !important;
+    color: white !important;
+}
+.main-link {
+    stroke: white;
     stroke-width: 1px;
-    opacity: 0.5;
-  }
-  .popout {
-      background-color: #1f1919;
-      width: auto;
-      height: 55vh;
-      position: relative;
-      color: white;
-      font-family: 'Space Mono', monospace;
-      padding-left: 0px;
-      /*padding: 10px;*/
-      /*
-      top: 5vh;
-      left: 3vw;
-      */
-      margin-top: 8px;
-      font-size: 12px;
-      font-weight: normal;
-      font-style: normal;
-      
-  }
-
-  /*
-  [draggable=true] {
-    cursor: move;
-  }
-  
-  .resizable {
-    overflow: scroll;
-    resize: both;
-    max-width: 300px;
-    max-height: 460px;
-    border: 1px solid black;
-    min-width: 50px;
-    min-height: 50px;
-    background-color: skyblue;
-  }
-  */
-  .close-div {
-      height: 0;
-      background-color: #1f1919;
-      width: 0;
-      color: white;
-      font-family: 'Space Mono', monospace;
-
-  }
-  .actual-popout {
-      position: absolute;
-      display: flex;
-      width: auto;
-      height: auto;
-  }
-  .popout-app1 {
-    position:  absolute;
-          left: 0;
-          top: 0; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
-          width: 17vw; 
-          background-color: #F2F2F2; 
-          border: 2px  solid rgba(0,0,0,0.5); 
-          padding-top: 10px; padding-right: 0px;
-          border: magenta 1px solid;
-    display: flex;
-    flex-direction: column;
-    z-index: 20 !important;
-
-    font-family: 'Space Mono';
-    font-weight: 700;
-    font-style: italic;
-    font-size: 18px;
-
-    /*padding-left: 2px;*/
-    
-    
-}
-/* THIS IS THE X BUTTON */
-h1 {
-
-    background-color: transparent;
-    
-    color: white;
-    font-size: 15px;
-    border: 1px solid white;
-    font-weight: normal;
-    position: relative;
-    bottom: 33px;
-    left: 17vw !important;
-    text-align: center;
-    width: 20px;
-    
-    
+    opacity: 0.8;
 }
 
-/*
-.titleBar {
-    border: green 2px solid;
-    /*padding-bottom: 50px;
-}
-*/
-/*
-h2 {
-    margin: 0;
-    padding-bottom: 2px;
-    width: auto;
-    z-index: -20 !important;
-    font-family: 'Space Mono';
-    font-weight: 700;
-    font-style: italic;
-    font-size: 18px;
-}
-
-.testing {
-    border: yellow 2px solid;
-}
-*/
-
-.descriptor {
-    padding: 10px;
-    text-overflow: ellipsis;
-    overflow:scroll;
-    height: 30vh;
-    z-index: 10;
-
-   
-}
-
-.non-important-popout {
-    border: 1px solid #FF5F1F;
-    background-color: #FF5F1F;
-}
-
-.non-important-close-div {
-    background-color: transparent;
-    
-    color: #FF5F1F;
-    font-size: 15px;
-    border: 1px solid #FF5F1F;
-    font-weight: normal;
-    position: relative;
-   
-    left: 17vw;
-    text-align: center;
-    width: 20px;
-
-}
-.closer {
-    position: absolute;
-    font-size: 12px;
-    font-family: "Space Mono";
-    color: rgba(255, 255, 255, 0.8);
-    bottom: 2vh;
-    right: 2vw;
-}
-/*
-.hide {
-    opacity: 0;
-    transition: opacity 1s linear;
-    -webkit-transition: opacity 1s linear;
-    -moz-transition: opacity 1s linear;
-    -o-transition: opacity 1s linear;
-  }
-  */
-  .show {
-    animation: fadein 0.3s;
-
-  }
-  @keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; visibility: visible !important;}
-}
-.hide {
-    animation: fadeout 0.3s;
-}
-@keyframes fadeout {
-    from { opacity: 1; }
-    to   { opacity: 0; }
-}
-.suggestedLinks {
-    margin-top: 10px;
-}
-a {
-    color: white;
-
-}
-.non-important-a {
-    color: #FF5F1F !important;
-}
-a:hover {
-    color: #FF5F1F;
-}
-li {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 10px;
-}
-ul {
-    padding-left: 10px;
-    
-}
-/*
-.textShown:hover {
-    font-weight: 700;
-    font-family: "Space-Mono";
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#text {
-    border: blue 10px solid;
-}
-
+/* FOR POPOUTS */
 .default-popout {
     border: #FF5F1F 1px solid;
     position: absolute;
@@ -356,8 +120,6 @@ ul {
     font-weight: 700;
     font-style: italic;
     font-size: 18px;
-    
-
     display: flex;
     flex-direction: column;
 }
@@ -371,7 +133,6 @@ ul {
     font-style: normal;
     font-size: 12px;
 }
-
 .title-bar {
     pointer-events: none;
     height: auto;
@@ -384,7 +145,6 @@ ul {
 .suggested {
     padding: 5px;
 }
-
 .exit {
     position: absolute;
     top: -1.4vh;
@@ -392,7 +152,6 @@ ul {
     width: 20px;
     color: #FF5F1F;
     border: 1px solid #FF5F1F;
-
 }
 .desc {
     padding: 10px;
@@ -409,9 +168,9 @@ ul {
     font-weight: lighter;
     margin-top: 10px;
     margin-left: 10px;
-
 }
 .show-main {
+    color: white !important;
     visibility: visible;
 }
 .hidden-instructions {
@@ -429,8 +188,6 @@ ul {
     align-items: center;
     gap: 10px;
     font-family: "Space Mono";
-
-
 }
 .github {
     width: auto;
@@ -451,4 +208,40 @@ a {
 }
 .link-box:hover {
     background-color: white;
+}
+
+/* ANIMATIONS */
+.show {
+    animation: fadein 0.3s;
+
+  }
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; visibility: visible !important;}
+}
+.hide {
+    animation: fadeout 0.3s;
+}
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+.twinkle {
+    animation: blinker 2s linear infinite;
+}
+  @keyframes blinker {
+    50% {
+      opacity: 50%;
+    }
+    100% {
+        opacity: 100%;
+    }
+  }
+.instructions:hover {
+    animation: appear-slow 2s;
+}
+@keyframes appear-slow {
+    25% { opacity: 1;}
+    50% {opacity: 1;}
+    75% { opacity: 1;}
 }
