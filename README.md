@@ -10,7 +10,7 @@ Although this personal-guided research shows a general bigger picture, it is not
 It is simply a show of design, data, and discussion bundled up together. 
 This is made with HTML, CSS, Javascript, [d3.js](https://d3js.org/), and the [New York Times Article Search API](https://developer.nytimes.com/docs/articlesearch-product/1/overview)
 
-<img align="right" src="gif1.gif" alt="gif1 of the DataVisualizer">   
+<img align="right" src="images/gif1.gif" alt="gif1 of the DataVisualizer">   
 To start:   
 Simply hover over a node to view its name and its connections.
 It is recommended that you start with the biggest and the most isolated node.  
@@ -21,7 +21,7 @@ whereas orange nodes provide a more specific point, white nodes provides the mor
 <br>
 <br>
 <br>
-<img align="left" src="gif2.gif" alt="gif1 of the DataVisualizer" height="500px">
+<img align="left" src="images/gif2.gif" alt="gif1 of the DataVisualizer" height="500px">
    
 ### Informational Popouts ###
 Click on a node to find what lies underneath. The popout explains how and why a given point relates to the overarching theme and its connections. With the popout, one can see the image, the text description, and it is also fully draggable. <br> <br><br><br>

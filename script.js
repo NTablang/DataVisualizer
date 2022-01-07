@@ -600,6 +600,6 @@ const showWarning = () => {
     }, 3500)
 }
 
-d3.csv("nodesDescs.csv", parseNodesCSVToGraphNodes);
-d3.csv("edges.csv", parseEdgesCSVToGraphEdges);
+d3.csv("data/nodesDescs.csv", parseNodesCSVToGraphNodes);
+d3.csv("data/edges.csv", parseEdgesCSVToGraphEdges);
 showWarning();
