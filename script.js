@@ -100,6 +100,7 @@ const drawGraph = () => {
     setInterval(() => {
         let offset = Math.random() + 10;
         force.start();
+        
 
         force.on("tick", function() {
         edges.attr("x1", function(d){ return d.source.x + offset - 5;})
