@@ -592,8 +592,8 @@ async function findSuggested(name) {
     console.log(data.response.docs[2].headline);
     suggestedLinks = [
         data.response.docs[0]["web_url"],
-        data.response.docs[0]["web_url"],
-        data.response.docs[0]["web_url"]
+        data.response.docs[1]["web_url"],
+        data.response.docs[2]["web_url"]
     ]
     suggestedTitles =  [
         data.response.docs[0].headline.main,
