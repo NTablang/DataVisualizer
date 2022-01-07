@@ -42,3 +42,13 @@ Hi! My name is [Nathan Tablang](https://www.linkedin.com/in/nathan-tablang-297b8
 I am a sophomore computer science student studying at University of Maryland, College Park! 
 I have big aspirations and I would like to keep improving my skills to the point that other people will seek for my help. 
 Helping those in need is a fulfilling thing and it makes every problem worthwhile!
+
+## Color Reference
+
+| Color             | Hex                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| Example Color | ![#0a192f](https://via.placeholder.com/10/0a192f?text=+) #0a192f |
+| Example Color | ![#f8f8f8](https://via.placeholder.com/10/f8f8f8?text=+) #f8f8f8 |
+| Example Color | ![#00b48a](https://via.placeholder.com/10/00b48a?text=+) #00b48a |
+| Example Color | ![#00d1a0](https://via.placeholder.com/10/00b48a?text=+) #00d1a0 |
+
