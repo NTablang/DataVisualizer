@@ -28,5 +28,5 @@ Click on a node to find what lies underneath. The popout explains how and why a 
   
 <br>
 ### Suggested Feed: Articles ###
-Articles listed are fetched through the [New York Times Article Search API](https://developer.nytimes.com/docs/articlesearch-product/1/overview). Note that the articles suggested are simply queried by fetching the API with the topic name as the query parameters. As such, it may or may not be possible that the feeds suggested may be relevant to the actual topic.
+Articles listed are fetched through the New York Times Article Search API. Note that the articles suggested are simply queried by fetching the API with the topic name as the query parameters. As such, it may or may not be possible that the feeds suggested may be relevant to the actual topic.
 
