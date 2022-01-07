@@ -377,7 +377,9 @@ const addStyles = () => {
             if (rect["__data__"].important) { // add shit here to the master popout if it is important
                 mainPaneDiv.style.color = "white";
             }
-            mainPaneDiv.appendChild(image);
+            if (image != null || image != undefined) {
+                mainPaneDiv.appendChild(image);
+            }
             mainPaneDiv.appendChild(descriptionDiv);
             mainPaneDiv.appendChild(suggestedDiv);
            
