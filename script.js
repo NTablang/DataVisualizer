@@ -165,7 +165,6 @@ const parseEdgesCSVToGraphEdges = (data) => {
 // sets the important attribute for each node
 // P.S.: important means that this node (or this topic) is a key point for the argument
 const setImportanceForNode = (targetName, importance) => {
-    console.log(targetName);
     let nodeSet = graphs.nodes;
     for (let i = 0; i < nodeSet.length; i++) {
         if (nodeSet[i]["name"] == targetName) {
@@ -225,7 +224,6 @@ const addStyles = () => {
             rect.classList.add("main");
         }
         if (rect["__data__"]["important"]) {
-            console.log("Test");
             rect.classList.add("important");
             let nodeName = rect["__data__"]["name"].toUpperCase();
             textLabels.forEach((text) => {
@@ -235,7 +233,6 @@ const addStyles = () => {
             });
         }
         textLabels.forEach((text) => {
-            console.log(text["textContent"]);
             if (text["textContent"].toUpperCase() == "STUDENT DEBT") {
                 text.id = "main-node";
                 text.style.color = "white !important";
@@ -280,15 +277,11 @@ const addStyles = () => {
                     let targetNode = match["__data__"]["target"];
                     // if this is the edge that we are looking for then apply the link styles
                     if (sourceNode.name == edge.source.name && targetNode.name == edge.target.name) {
-                        console.log("here000!!!!!");
                         match.classList.add("linkShown");
-                        console.log(match["__data__"]);
                         
                         if (e["target"]["__data__"]["important"] == null || e["target"]["__data__"]["important"] == undefined) {
                             let connectedEdgesToTarget = e["target"]["__data__"]["connectedEdges"];
                             connectedEdgesToTarget.forEach((edge) => {
-                                console.log("test here");
-                                console.log(edge);
                                 allEdges.forEach((edge) => {
                                     if (e["target"]["__data__"]["name"] == edge["__data__"]["source"] || e["target"]["__data__"]["name"] == edge["__data__"]["target"]) {
                                         edge.classList.add("overrideLink");
@@ -305,9 +298,7 @@ const addStyles = () => {
                         }
                     }
                     else if (sourceNode.name == edge.target.name && targetNode.name == edge.source.name) {
-                        console.log("here222!!!!!");
                         match.classList.add("linkShown");
-                        console.log(match["__data__"]);
                     }
                 });
             });
@@ -340,7 +331,6 @@ const addStyles = () => {
             let image;
             let imagePath = rect["__data__"].imgPath;
             if (imagePath != undefined || imagePath != null) {
-                console.log(imagePath);
                 image = document.createElement("img");
                 image.setAttribute('src', imagePath);
                 image.setAttribute('width', "100%")
@@ -401,13 +391,11 @@ const addStyles = () => {
             }
             // event listener for the close button
             x.addEventListener("click", e => {
-                console.log(e);
                 let popoutToKillID = e["path"][1].id;
                 let popoutToKill = document.getElementById(popoutToKillID)
                 popoutToKill.classList.add("hide");
                 popoutToKill.addEventListener("animationend", () => {
                     document.body.removeChild(popoutToKill);
-                    console.log(idCount);
                 });
                 idCount--;
                 if (idCount == 0) {
@@ -434,7 +422,6 @@ const addStyles = () => {
             // POPOUTDIV IS MASTER DIV
             // PREREQS: the master popout div, var lastPopoutTop, lastPopoutLeft
             if (lastPopoutTop == undefined && lastPopoutLeft == undefined) {
-                console.log("first one");
                 lastPopoutTop = "5";
                 lastPopoutLeft = "3";
                 masterPopout.style.top = lastPopoutTop + "vh";
@@ -580,16 +567,11 @@ const draggableDivs = () => {
 
 // RESPONSIBLE FOR FETCHING ARTICLES FROM THE NEW YORK TIMES API WITH @param article name
 async function findSuggested(name) {
-    console.log("finding articles for")
-    console.log(name);
     let currentNodeName = name;
     // !IMPORTANT!!! I am a bit intimidated with figuring out how to hide api-keys in Github reps so please don't use it :( 
     let url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${currentNodeName}&api-key=xAskm0aJnTaEfA22HWvzeIEfg6WyLTaQ`;
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data.response.docs[0].headline);
-    console.log(data.response.docs[1].headline);
-    console.log(data.response.docs[2].headline);
     suggestedLinks = [
         data.response.docs[0]["web_url"],
         data.response.docs[1]["web_url"],
