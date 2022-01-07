@@ -25,16 +25,16 @@ let h = window.innerHeight;
 
 // the simulation graph
 const drawGraph = () => {
-    let nodeSideLength = 10;
+    let nodeSideLength = 8;
     let nodeWidth = nodeSideLength;
     let nodeHeight = nodeSideLength;
     let distancesBetweenLinks = 250;
     let nodeColor = "#FF5F1F";
-    let linkStrength = 1;
-    let grav = 0.1;
+    let linkStrength = 0;
+    let grav = 0.3;
 
-    let w = window.innerWidth;
-    let h = window.innerHeight;
+    let w = window.innerWidth - 50;
+    let h = window.innerHeight - 60;
    
     /*
    const tick = () => {
@@ -55,10 +55,14 @@ const drawGraph = () => {
         .nodes(graphs.nodes)
         .links(graphs.edges)
         .linkDistance(distancesBetweenLinks)
-        .charge(function(d){
-            let charge = -900;
-            if (d.index === 0) charge = 10 * charge;
-            return charge;
+        /*
+       
+        */
+       .charge([1100])
+       .charge(function(d){
+        let charge = -900;
+        if (d.index === 0) charge = 10 * charge;
+        return charge;
         })
         .linkStrength(linkStrength)
         .gravity(grav)
@@ -274,6 +278,13 @@ const addStyles = () => {
                 }
             });
         }
+        textLabels.forEach((text) => {
+            console.log(text["textContent"]);
+            if (text["textContent"].toUpperCase() == "STUDENT DEBT") {
+                text.id = "main-node";
+                
+            }
+        })
 
         // event listeners: hovering over a node
         rect.addEventListener("mouseover", e => {
@@ -357,34 +368,144 @@ const addStyles = () => {
         });
         // event listeners: clicking the node
         rect.addEventListener("click", e => {
+            let nodeName = rect["__data__"].name;
             
             
+            // TO MAKE SURE STUDENT DEBT NODE IS IMPORTANT
             if(rect["__data__"].name == 'Student Debt') {
                 rect["__data__"].important = true;
             }
-
-
-            console.log(rect["__data__"].description);
             
-        
-            let popoutDiv = document.createElement("div");
+            // master popout
+            let masterPopout = document.createElement("div");
+            masterPopout.classList.add("default-popout");
+            masterPopout.classList.add("show");
+            masterPopout.id = `popout${idCount++}`;
+            if (rect["__data__"].important) { // add shit here to the master popout if it is important
+                masterPopout.style.border = "solid 1px white";
+                masterPopout.style.backgroundColor = "white";
+            }            
+            
+            // title pane
+            let titleDiv = document.createElement("div");
+            titleDiv.innerHTML = rect["__data__"].name.toUpperCase();
+            titleDiv.classList.add("title-bar");
+            
+
+            // image
+            let image;
+            let imagePath = rect["__data__"].imgPath;
+            if (imagePath != undefined || imagePath != null) {
+                console.log(imagePath);
+                image = document.createElement("img");
+                image.setAttribute('src', imagePath);
+                image.setAttribute('width', "100%")
+                image.setAttribute("height", "auto")
+                image.style.border = "1px solid #FF5F1F";
+                if (rect["__data__"].important) {
+                    image.style.border = "1px solid white";
+                }
+            }
+            // description
+            let descriptionDiv = document.createElement("div");
+
+            // textDiv
             let textDiv = document.createElement("div");
-            /* CLOSE BUTTON */
-            let closeDiv = document.createElement("div");
+            textDiv.textContent = rect["__data__"].description;
+            textDiv.classList.add("desc");
+            descriptionDiv.appendChild(textDiv);
+
+            // suggested feeds
+            let suggestedDiv = document.createElement("div");
+            suggestedDiv.classList.add("suggested");
+            suggestedDiv.textContent = "📰 Suggested Feeds (NYT API)";
+            // for filling out the suggested feeds
+            findSuggested(nodeName);
+            // for fetching data from the api
+            setTimeout(() => {
+                let lists = document.createElement("ul");
+                for (let i = 0; i < 3; i++) {
+                    let item = document.createElement("li");
+                    let link = document.createElement("a")
+                    link.innerHTML = suggestedTitles[i];
+                    link.href = suggestedLinks[i];
+                    link.id = `link${linkCount}`
+                    item.appendChild(link);
+                    lists.appendChild(item);
+                    
+                }
+                suggestedDiv.appendChild(lists);
+            }, 1000);
+            
+
+            // main pane
+            let mainPaneDiv = document.createElement("div");
+            mainPaneDiv.classList.add("main-pane")
+            if (rect["__data__"].important) { // add shit here to the master popout if it is important
+                mainPaneDiv.style.color = "white";
+            }
+            mainPaneDiv.appendChild(image);
+            mainPaneDiv.appendChild(descriptionDiv);
+            mainPaneDiv.appendChild(suggestedDiv);
+           
+            // close button
             let x = document.createElement("h1");
+            x.classList.add("exit");
+           //x.id = "closer";
+            x.textContent = "x";
+            if (rect["__data__"].important) { // add shit here to the master popout if it is important
+                x.style.color = "white";
+                x.style.border = "1px solid white";
+            }
+            
+            x.addEventListener("click", e => {
+                console.log(e);
+                let popoutToKillID = e["path"][1].id;
+                let popoutToKill = document.getElementById(popoutToKillID)
+                popoutToKill.classList.add("hide");
+                popoutToKill.addEventListener("animationend", () => {
+                    document.body.removeChild(popoutToKill);
+                    console.log(idCount);
+                });
+                idCount--;
+                if (idCount == 0) {
+                    let closerBtn = document.getElementById("closer");
+                    closerBtn.classList.add("hide");
+                    closerBtn.addEventListener("animationend", () => {
+                        document.body.removeChild(closerBtn);
+                        
+                    })
+                }
+            })
+
+
+
+
+
+
+
+            // APPENDATIONS TO MASTERPOPOUT
+            masterPopout.appendChild(titleDiv);
+            masterPopout.appendChild(mainPaneDiv);
+            masterPopout.appendChild(x);
+
+            // APPENDATIONS
+            document.body.appendChild(masterPopout);
+
+            /*
+            let popoutDiv = document.createElement("div"); // main popout
+            let textDiv = document.createElement("div");
+            // CLOSE BUTTON 
+            let closeDiv = document.createElement("div");
+            let x = document.createElement("h1"); // x button
             x.innerHTML = "x";
             if (!rect["__data__"].important) {
                 x.classList.add("non-important-close-div");
-                
+        
             }
-            else {
-                //x.classList.add("close-div");
-            }
-            //x.style.bottom = `${-50}vh;`
+
+            // removing the popout: CLICKING THE X BUTTON
             x.addEventListener("click", e => {
-                           // popoutDiv.classList.add("hide");
-
-
                 let popoutToKillID = e["path"][2].id;
                 let popoutToKill = document.getElementById(popoutToKillID)
                 popoutToKill.classList.add("hide");
@@ -402,15 +523,14 @@ const addStyles = () => {
                 }
             })
 
-            /* TITLE BAR */ 
+            // POPOUT MAKERS BEGIN HERE
+            // TITLE BAR 
             let nodeName = rect["__data__"].name;
             let title = document.createElement("h2");
             title.innerHTML = nodeName.toUpperCase();
             title.classList.add("titleBar");
 
-            /* TEXT DIV */
-            console.log("try again");
-            console.log(rect["__data__"].important);
+            // TEXT DIV 
             let nodeDescription = rect["__data__"].description;
             let imagepath = rect["__data__"].imgPath
             textDiv.classList.add("popout");
@@ -427,7 +547,7 @@ const addStyles = () => {
             if (!rect["__data__"].important) {
                 textdescriptionDiv.style.color = "#FF5F1F";
             }
-            /* LINKS ADDON TO TEXTDESCRIPTIONDIV */
+            // LINKS ADDON TO TEXTDESCRIPTIONDIV /
             let suggestedDiv = document.createElement("div");
             suggestedDiv.classList.add("suggestedLinks");
             suggestedDiv.textContent = "📰 Suggested Feeds";
@@ -435,11 +555,7 @@ const addStyles = () => {
                 suggestedDiv.classList.add("non-important-a");
             }
             
-            
-            /*
-            console.log(d3.json("https://api.nytimes.com/svc/search/v2/articlesearch.json?q=Student&api-key=xAskm0aJnTaEfA22HWvzeIEfg6WyLTaQ", gotData))
-            */
-            
+            // SUGGESTED FEEDS WITH NYT API
             findSuggested(nodeName);
             setTimeout(() => {
                 console.log("chk");
@@ -465,17 +581,19 @@ const addStyles = () => {
 
             }, 1000);
             
-
+            
             textdescriptionDiv.appendChild(suggestedDiv);
             textDiv.append(textdescriptionDiv);
 
-            /* CLOSE BUTTON */
+            // CLOSE BUTTON //
             closeDiv.classList.add("close-div");
             closeDiv.appendChild(x);
 
-            /* POPOUT CONTAINER */
+            // POPOUT CONTAINER //
             popoutDiv.textContent = rect["__data__"].name.toUpperCase();
             popoutDiv.appendChild(textDiv);
+           // textdescriptionDiv.classList.add("popout");
+           // popoutDiv.appendChild(textdescriptionDiv);
             popoutDiv.appendChild(closeDiv);
 
             popoutDiv.classList.add("show");
@@ -487,6 +605,7 @@ const addStyles = () => {
             console.log(rect["__data__"].name);
 
             
+            // THIS IS APPARENTLY FOR SETTING UP THE BORDER?
             if (!rect["__data__"].important) {
                 console.log("Haha");
                 console.log(rect["__data__"].important);
@@ -495,54 +614,50 @@ const addStyles = () => {
             else {
                 popoutDiv.style.border = "1px white solid;"
             }
-
-           // popoutDiv.textContent = rect["__data__"].name;
             popoutDiv.id = `drag${idCount}`;
-            
             idCount++;
+            */
             
         
-            // if there's already a div
-            console.log(lastPopoutTop);
-            console.log(lastPopoutLeft)
+            // RESPONSIBLE FOR THAT CASCADING EFFECT WHEN OPENED
+            // IF THIS DIV IS THE FIRST ONE
+            // POPOUTDIV IS MASTER DIV
+            // PREREQS: the master popout div, var lastPopoutTop, lastPopoutLeft
             if (lastPopoutTop == undefined && lastPopoutLeft == undefined) {
                 console.log("first one");
                 lastPopoutTop = "5";
                 lastPopoutLeft = "3";
-                popoutDiv.style.top = lastPopoutTop + "vh";
-                popoutDiv.style.left = lastPopoutLeft + "vw";
+                masterPopout.style.top = lastPopoutTop + "vh";
+                masterPopout.style.left = lastPopoutLeft + "vw";
             }
+            // IF THERE'S ALREADY A DIV EXISTING
             else {
-                console.log("there's already a div")
-                console.log(lastPopoutTop);
-                console.log(lastPopoutLeft);
                 let newTop = parseInt(lastPopoutTop) + 3;
                 let newLeft = parseInt(lastPopoutLeft) + 2
 
                 lastPopoutTop = newTop;
                 lastPopoutLeft = newLeft;
 
-                console.log("newtop: " + newTop);
-                console.log("newLeft: " + newLeft);
-                popoutDiv.style.top = `${newTop}vh`;
-                popoutDiv.style.left = `${newLeft}vw`;
+                
+                masterPopout.style.top = `${newTop}vh`;
+                masterPopout.style.left = `${newLeft}vw`;
             }
-            
 
             
-
-            
-            console.log(`"lastpopoutx: ${lastPopoutTop}"`);
-            console.log(`"lastpopoutx: ${lastPopoutLeft}"`);
-
-            
-            document.body.appendChild(popoutDiv);
+            //document.body.appendChild(popoutDiv);
             draggableDivs();
+            
+           
 
 
-
+            
+            // RESPONSIBLE FOR THE CLOSE BUTTON DESTROY ALL BUTTON
+            // ID closer IS THE "X DESTROY ALL" ID
+            // MAKE SURE THERE'S ONLY ONE "X DESTROY ALL"
+            // PREREQS: idCount variable, ".default-popout" class for the popouts
             let closers = document.getElementById("closer");
-            if ( (closers == undefined || closers == null)) {
+            if ((closers == undefined || closers == null)) {
+                // RESPONSIBLE FOR MAKING THE DIV APPEAR
                 let closer = document.createElement("div");
                 closer.textContent = "x destroy all";
                 closer.classList.add("closer");
@@ -550,32 +665,84 @@ const addStyles = () => {
                 closer.id = "closer";
                 document.body.appendChild(closer);
 
-
+                // ADDEVENTLISTENER FOR WHEN YOU CLICK THE DIV: SHOULD CLOSE ALL POPOUTS INCLUDING ITSELF
                 closer.addEventListener("click", () => {
-                    let popouts = document.querySelectorAll(".actual-popout");
-
-                    console.log("clicked");
+                    // GET ALL POPOUTS
+                    let popouts = document.querySelectorAll(".default-popout");
+                    // FOR EACH POPOUT
                     popouts.forEach((popout) => {
+                        // ADD THE HIDE ANIMATION
                         popout.classList.add("hide");
+                        // WHEN THAT ANIMATION ENDS
                         popout.addEventListener("animationend", () => {
+                            // REMOVE THE POPOUTS FROM THE DOCUMENT.BODY
                             document.body.removeChild(popout);
                         });
+                        // DECREASE THE IDCOUNT
                         idCount--;
                     });
+                    // ADD THE HIDE ANIMATION
                     closer.classList.add("hide");
+                    // WHEN THAT ANIMATION ENDS
                     closer.addEventListener("animationend", () => {
+                        // REMOVE THE POPOUTS FROM THE DOCUMENT.BODY
                         document.body.removeChild(closer);
-                    })
-                    console.log(idCount);
-                    
+                    })                    
                 })
-                            //let popouts = document.querySelectorAll(".actual-popout");
 
             }
+
+            if (idCount == 0) {
+                let destroyBtn = document.getElementById("closer");
+                destroyBtn.classList.add("hide");
+                destroyBtn.addEventListener("animationend", () => {
+                    // REMOVE THE POPOUTS FROM THE DOCUMENT.BODY
+                    document.body.removeChild(destroyBtn);
+                })  
+
+            }
+            // POPOUT ENDS HERE
+            let instructionDiv = document.querySelector(".instructions");
+            if (idCount > 0) {
+                instructionDiv.classList.add("hide");
+                
+                instructionDiv.addEventListener("animationend", () => {
+                    instructionDiv.classList.add("hidden-instructions");
+                });
+                
+            }
+            if (idCount == 0) {
+                instructionDiv.classList.remove("hidden-instructions");
+                instructionDiv.classList.remove("hide");
+                instructionDiv.classList.add("visible-instructions");
+            }
+
+
+
         });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
         // still part of applyStyles() function
-        //draggableDivs();
+        
     
     });
 
@@ -608,10 +775,17 @@ const addStyles = () => {
     }
     */
 
+    let mainNode = document.getElementById("main-node");
+    mainNode.classList.add("show-main");
+    setTimeout(() => {
+        mainNode.classList.add("hide");
+        mainNode.classList.remove("show-main");
+    }, 4000)
+
 }
 
 const draggableDivs = () => {
-    divs = document.querySelectorAll(".popout-app1");
+    divs = document.querySelectorAll(".default-popout");
             for (div of divs) div.onmousedown = onMouseDown;
             
             document.onmousemove = onMouseMove;
@@ -631,7 +805,7 @@ const draggableDivs = () => {
                 the_last_mouse_position.y = e.clientY;
                 //e.target.style.border = "2px solid white";     // highlight the border of the div
             
-                var divs = document.querySelectorAll(".popout-app1");
+                var divs = document.querySelectorAll(".default-popout");
                 
                 e.target.style.zIndex = divs.length;          // put this div  on top
                 var j = 1; for (div of divs) if (div.id != the_moving_div) div.style.zIndex = j++;   // put all other divs behind the selected one

@@ -84,22 +84,22 @@ body {
     }
   }
   .main {
-      fill: #ff0000 !important;
-    stroke: #ff0000;
+      fill: #f74700 !important;
+    stroke: #f74700;
     stroke-width: 5px;
   }
   .main-text {
-    fill: #ff0000 !important;
+    fill: #f74700 !important;
   }
   .main-link {
-    stroke: #ff0000;
+    stroke: #f74700;
     stroke-width: 1px;
     opacity: 0.5;
   }
   .popout {
       background-color: #1f1919;
       width: auto;
-      height: 48vh;
+      height: 55vh;
       position: relative;
       color: white;
       font-family: 'Space Mono', monospace;
@@ -133,16 +133,16 @@ body {
   }
   */
   .close-div {
-      height: auto;
+      height: 0;
       background-color: #1f1919;
-      width: auto;
+      width: 0;
       color: white;
       font-family: 'Space Mono', monospace;
+
   }
   .actual-popout {
       position: absolute;
       display: flex;
-      border: gold 3px solid;
       width: auto;
       height: auto;
   }
@@ -154,7 +154,7 @@ body {
           background-color: #F2F2F2; 
           border: 2px  solid rgba(0,0,0,0.5); 
           padding-top: 10px; padding-right: 0px;
-          border: white 1px solid;
+          border: magenta 1px solid;
     display: flex;
     flex-direction: column;
     z-index: 20 !important;
@@ -178,13 +178,14 @@ h1 {
     border: 1px solid white;
     font-weight: normal;
     position: relative;
-   
-    left: 17vw;
+    bottom: 33px;
+    left: 17vw !important;
     text-align: center;
     width: 20px;
     
     
 }
+
 /*
 .titleBar {
     border: green 2px solid;
@@ -212,8 +213,12 @@ h2 {
     padding: 10px;
     text-overflow: ellipsis;
     overflow:scroll;
-    height: 50%;
+    height: 30vh;
+    z-index: 10;
+
+   
 }
+
 .non-important-popout {
     border: 1px solid #FF5F1F;
     background-color: #FF5F1F;
@@ -256,7 +261,7 @@ h2 {
   }
   @keyframes fadein {
     from { opacity: 0; }
-    to   { opacity: 1; }
+    to   { opacity: 1; visibility: visible !important;}
 }
 .hide {
     animation: fadeout 0.3s;
@@ -294,3 +299,156 @@ ul {
 }
 */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#text {
+    border: blue 10px solid;
+}
+
+.default-popout {
+    border: #FF5F1F 1px solid;
+    position: absolute;
+    width: 17vw;
+    height: 55vh;
+    background-color: #FF5F1F;
+    font-family: 'Space Mono';
+    font-weight: 700;
+    font-style: italic;
+    font-size: 18px;
+    
+
+    display: flex;
+    flex-direction: column;
+}
+.main-pane {
+    background-color: #1f1919;
+    width: 100%;
+    height: 100%;
+    color: #FF5F1F;
+    overflow: scroll;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 12px;
+}
+
+.title-bar {
+    pointer-events: none;
+    height: auto;
+    padding: 10px;
+    font-family: 'Space Mono';
+    font-weight: 700;
+    font-style: italic;
+    font-size: 18px;
+}
+.suggested {
+    padding: 5px;
+}
+
+.exit {
+    position: absolute;
+    top: -1.4vh;
+    height: 3vh;
+    width: 20px;
+    color: #FF5F1F;
+    border: 1px solid #FF5F1F;
+
+}
+.desc {
+    padding: 10px;
+}
+.instructions {
+    font-style: italic;
+    opacity: 0.5;
+    font-size: 18px;
+    border: rgba(255, 255, 255, 1) solid 1px;
+    position: absolute;
+    color: white;
+    font-family: "Space Mono";
+    padding: 10px;
+    font-weight: lighter;
+    margin-top: 10px;
+    margin-left: 10px;
+
+}
+.show-main {
+    visibility: visible;
+}
+.hidden-instructions {
+    visibility: hidden;
+}
+.visible-instructions {
+    visibility: visible;
+}
+.follow {
+    position: absolute;
+    color: white;
+    bottom: 2vh;
+    left: 2vw;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Space Mono";
+
+
+}
+.github {
+    width: auto;
+    height: 20px;
+}
+a {
+    text-decoration: none;
+    font-family: "Space Mono";
+    font-size: 12px;
+}
+.link-box{
+    border: solid 1px white;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+    font-family: "Space Mono";
+    font-size: 12px;
+
+}
+.link-box:hover {
+    background-color: white;
+}
