@@ -29,7 +29,7 @@ Click on a node to find what lies underneath. The popout explains how and why a 
 ### Suggested Feed: Articles ###
 Articles listed are fetched through the New York Times Article Search API. Note that the articles suggested are simply queried by fetching the API with the topic name as the query parameters. As such, it may or may not be possible that the feeds suggested may be relevant to the actual topic.<br><br><br>
   
-## Acknowledgements
+## 🔥 Acknowledgements
 
  - [The Coding Train's NYT API](https://www.youtube.com/watch?v=IMne3LY4bks&t=794s&ab_channel=TheCodingTrain)
  - [How to D3 Force Directed Layout Graph](https://www.youtube.com/watch?v=HP1tOlxVYz4&t=846s&ab_channel=BenSullins)
