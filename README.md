@@ -13,11 +13,9 @@ It is simply a show of design, data, and discussion bundled up together. This is
 <img align="right" src="gif1.gif" alt="gif1 of the DataVisualizer">   
 <br>
 <br>
-<br>
 To start:   
 Simply hover over a node to view its name and its connections.
 It is recommended that you start with the biggest and the most isolated node.
-<br>
 <br>
 <br>
 White nodes indicate a key point that is essential to such groups and connections, while orange nodes indicate subpoints; 
