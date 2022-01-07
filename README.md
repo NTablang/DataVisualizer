@@ -9,6 +9,10 @@ This shows the relationships between the central topics emerging since the conce
 Although this personal-guided research shows a general bigger picture, it is not intended to be used as an official material! It is simply a show of design,
 data, and discussion bundled up together.
 
-To start:
+<img align="right" src="gif1.gif" alt="gif1 of the DataVisualizer">
+# To start:  
+Simply hover over a node to view its name and its connections.   
+It is recommended that you start with the biggest and the most isolated node.
+
 
 
