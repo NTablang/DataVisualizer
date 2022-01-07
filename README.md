@@ -29,6 +29,13 @@ Click on a node to find what lies underneath. The popout explains how and why a 
 ### Suggested Feed: Articles ###
 Articles listed are fetched through the New York Times Article Search API. Note that the articles suggested are simply queried by fetching the API with the topic name as the query parameters. As such, it may or may not be possible that the feeds suggested may be relevant to the actual topic.<br><br><br>
   
+    
+### About the New York Times API ###
+This website utilized the use of the New York Times API. How I used the API is that for every popout that appeared, 
+I took the topic name and used that to be query for the article lookup. As stated earlier, it is possible that an article may be irrelevant to the topic; 
+I simply chose the top 3 most relevant articles given by the API in the json object given.<br><br><br>
+  
+
 ## 🔥 Acknowledgements
 
  - [The Coding Train's NYT API](https://www.youtube.com/watch?v=IMne3LY4bks&t=794s&ab_channel=TheCodingTrain)
