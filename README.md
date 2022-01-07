@@ -47,8 +47,12 @@ Helping those in need is a fulfilling thing and it makes every problem worthwhil
 
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| Example Color | ![#0a192f](https://via.placeholder.com/10/0a192f?text=+) #0a192f |
-| Example Color | ![#f8f8f8](https://via.placeholder.com/10/f8f8f8?text=+) #f8f8f8 |
-| Example Color | ![#00b48a](https://via.placeholder.com/10/00b48a?text=+) #00b48a |
-| Example Color | ![#00d1a0](https://via.placeholder.com/10/00b48a?text=+) #00d1a0 |
+| Key Ideas  | ![#FFFFFF](https://via.placeholder.com/10/ffffff?text=+) #FFFFFF |
+| Sub points | ![#FF5F1F](https://via.placeholder.com/10/ff5f1f?text=+) #FF5F1F |
+| Background Color | ![#1F1919](https://via.placeholder.com/10/1f1919?text=+) #1f1919 |
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
 
