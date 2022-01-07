@@ -17,7 +17,9 @@ It is recommended that you start with the biggest and the most isolated node.
 <br>
 <br>
 White nodes indicate a key point that is essential to such groups and connections, while orange nodes indicate subpoints; 
-whereas orange nodes provide a more specific point, white nodes provides the more overarching themes.
-
+whereas orange nodes provide a more specific point, white nodes provides the more overarching themes.  
+<br>
+<br>
+<img align="left" src="gif2.gif" alt="gif1 of the DataVisualizer" height="500px">   
 
 
