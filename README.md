@@ -38,4 +38,7 @@ Articles listed are fetched through the New York Times Article Search API. Note 
 
 ## About the Author
 
-Hi! My name is [@Nathan Tablang](https://www.linkedin.com/in/nathan-tablang-297b861b1/)
+Hi! My name is [Nathan Tablang](https://www.linkedin.com/in/nathan-tablang-297b861b1/) and as of January 2022, 
+I am a sophomore computer science student studying at University of Maryland, College Park! 
+I have big aspirations and I would like to keep improving my skills to the point that other people will seek for my help. 
+Helping those in need is a fulfilling thing and it makes every problem worthwhile!
