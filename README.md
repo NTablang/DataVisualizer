@@ -36,6 +36,6 @@ Articles listed are fetched through the New York Times Article Search API. Note 
  - [D3.js tutorial - 10 - Loading External Data](https://www.youtube.com/watch?v=2S1AbEWX85o&ab_channel=d3Vienno)
  - [1.1: fetch() - Working With Data & APIs in JavaScript](https://www.youtube.com/watch?v=tc8DU14qX6I&ab_channel=TheCodingTrain)
 
-## Authors
+## About the Author
 
-[@Nathan Tablang](https://www.linkedin.com/in/nathan-tablang-297b861b1/)
+Hi! My name is [@Nathan Tablang](https://www.linkedin.com/in/nathan-tablang-297b861b1/)
