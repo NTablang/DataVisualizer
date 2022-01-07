@@ -33,11 +33,11 @@ Articles listed are fetched through the New York Times Article Search API. Note 
 ### About the New York Times API ###
 This website utilized the use of the New York Times API. How I used the API is that for every popout that appeared, 
 I took the topic name and used that to be queried for the article lookup. As stated earlier, it is possible that an article may be irrelevant to the topic; 
-I simply chose the top 3 most relevant articles given by the API in the json object given. Note that I have included the API key on this public repo because I don't know how I could hide the API-key whilst still making sure the live version works. Fortunately, the NYT api is free for use. I got lucky!<br><br><br>
+I simply chose the top 3 most relevant articles given by the API in the json object given. Note that I have included the API key on this public repo because I don't know how I could hide the API-key whilst still making sure the live version works. Fortunately, the NYT api is free for use. I got lucky!<br>
   
     
 ### About the d3.js framework ###
-This website utilized the use of the data visualization framework, d3.js. This is my first time using d3.js and although I have not used its other features (line graphs, scatter plots, and etc), I used the force-directed node graph layout. The d3.js version that is used is version 3. This framework allowed me to build a force system (with charge, link strength, and others) as well as its nodes and edges that responds to a drag mouse event.<br><br><br>
+This website utilized the use of the data visualization framework, d3.js. This is my first time using d3.js and although I have not used its other features (line graphs, scatter plots, and etc), I used the force-directed node graph layout. The d3.js version that is used is version 3. This framework allowed me to build a force system (with charge, link strength, and others) as well as its nodes and edges that responds to a drag mouse event.<br>
   
 
 ## 🔥 Acknowledgements
