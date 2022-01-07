@@ -21,7 +21,7 @@ whereas orange nodes provide a more specific point, white nodes provides the mor
 <br>
 <br>
 <br>
-<img align="left" src="gif2.gif" alt="gif1 of the DataVisualizer" height="500px">
+<img align="left" src="gif2.gif" alt="gif1 of the DataVisualizer" height="500px"> <br>
 ### Heading 3 ###
 
 
