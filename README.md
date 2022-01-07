@@ -7,8 +7,8 @@ How about just getting a bigger picture of the subject?
 Well fret not, this website is here to do just that. 
 This shows the relationships between the central topics emerging since the conception of the industry and the cause and effects of known themes. 
 Although this personal-guided research shows a general bigger picture, it is not intended to be used as an official material! 
-It is simply a show of design, data, and discussion bundled up together. This is made with HTML, CSS, Javascript, d3.js, and the New York Times Article Search API.
-
+It is simply a show of design, data, and discussion bundled up together. 
+This is made with HTML, CSS, Javascript, [d3.js](https://d3js.org/), and the [New York Times Article Search API](https://developer.nytimes.com/docs/articlesearch-product/1/overview)
 
 <img align="right" src="gif1.gif" alt="gif1 of the DataVisualizer">   
 To start:   
