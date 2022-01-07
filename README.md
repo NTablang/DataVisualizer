@@ -56,3 +56,9 @@ Helping those in need is a fulfilling thing and it makes every problem worthwhil
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
+
+## Tech Stack
+
+**Languages:** HTML, CSS, Javascript
+
+**API & Frameworks:** The New York Times API, d3.js
