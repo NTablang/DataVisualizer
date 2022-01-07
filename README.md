@@ -35,5 +35,7 @@ Articles listed are fetched through the New York Times Article Search API. Note 
  - [How to D3 Force Directed Layout Graph](https://www.youtube.com/watch?v=HP1tOlxVYz4&t=846s&ab_channel=BenSullins)
  - [D3.js tutorial - 10 - Loading External Data](https://www.youtube.com/watch?v=2S1AbEWX85o&ab_channel=d3Vienno)
  - [1.1: fetch() - Working With Data & APIs in JavaScript](https://www.youtube.com/watch?v=tc8DU14qX6I&ab_channel=TheCodingTrain)
- - 
- 
+
+## Authors
+
+- [@NathanTablang](https://www.linkedin.com/in/nathan-tablang-297b861b1/)
